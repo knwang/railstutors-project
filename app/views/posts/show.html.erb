@@ -1,6 +1,6 @@
 <h2> Show a post </h2>
 
-<p>
+<p class="hero-unit">
 	<%= link_to @post.title, @post.url %>
 </p>
 
@@ -13,3 +13,13 @@
 		</li>
 	<% end %>
 </ul>
+
+<p>
+	<h4> Create a New Comment: </h4>
+	<%= form_for [@post, @comment] do |f| %>
+		<%= f.label :content %>
+		<%= f.text_area :content, rows: 5%>
+		<br/>
+		<%= f.submit "Submit This Comment" %>
+	<% end %>
+</p>
